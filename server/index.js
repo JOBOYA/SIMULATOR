@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.post('/', async (req, res) => {
   const { activite, chiffre, location,
-    salarie, remuneration, materiel, vehicule } = req.body;
+    salarie, remuneration, materiel, vehicule, salaire } = req.body;
   const auth = new google.auth.GoogleAuth({
     keyFile: 'credentials.json',
     scopes: 'https://www.googleapis.com/auth/spreadsheets',
@@ -68,7 +68,7 @@ await googleSheets.spreadsheets.values.append({
       [salarie],
       [""],
       [""],
-      [""],
+      [salaire],
       [""],
       [""],
       [""],

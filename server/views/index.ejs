@@ -14,10 +14,10 @@
   <div class="container">
        <p>Votre Activité</p>
         <select name="activite" id="activite">
-            <option value="artisan" id="activite">ARTISANT</option>
-            <option value="commercant" id="activite">COMMERCANT</option>
-            <option value="professionliberal" id="activite">CONSULTANT</option>
-            <option value="autre" id="activite">LIBERAL</option>
+            <option value="ARISANT" id="activite">ARTISANT</option>
+            <option value="COMMERCANT" id="activite">COMMERCANT</option>
+            <option value="CONSULTANT" id="activite">CONSULTANT</option>
+            <option value="LIBERAL" id="activite">LIBERAL</option>
        </select>
         <p>Votre Chiffre d'Affaire</p>
      
@@ -25,30 +25,28 @@
         
 
        <p>Avez une location professionnelle? Si oui, pour quel montant annuel</p>
-       <select name="location" id="location">
-           <option value="oui" id="location">Oui</option>
-           <option value="non" id="location">Non</option>
-        </select>
+       <input name="location" id="location" placeholder="Votre montant">
 
-        <p>Présence de salarié oui ou non</p>
-        <select name="salarie" id="salarie">
-            <option value="oui" id="salarie">Oui</option>
-            <option value="non" id="salarie">Non</option>
+        <p>Présence de salarié oui ou non, si oui veuillez indiquer le salaire brut</p>
+        <select name="salarie">
+            <option value="OUI" id="oui" >OUI</option>
+           <option value="NON" >NON</option>
         </select>
+        <input name="salarie" id="salarie" placeholder="Votre salaire">
+
+
+        <p>salaire brut mensuel</p>
+        <input name="salaire" id="salaire" placeholder="Votre salaire">
    
     <p>Votre rémunératon net mensuel (ou retrait personnel mensuel)</p>
-    <input name="remuneration" id="remuneration" type="text" placeholder="Votre rémunération">
+    <input name="remuneration" id="remuneration" placeholder="Votre rémunération">
+
     <p>Investissement : matériels</p>
-    <select name="materiel" id="materiel">
-        <option value="oui" id="materiel">Oui</option>
-        <option value="non" id="materiel">Non</option>
-    </select>
+    <input name="materiel" id="materiel" placeholder="Votre investissement">
 
     <p>Investissement: véhicule</p>
-    <select name="vehicule" id="vehicule">
-        <option value="oui" id="vehicule">Oui</option>
-        <option value="non" id="vehicule">Non</option>
-  </select>
+    <input name="vehicule" id="vehicule" placeholder="Votre investissement">
+
       <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Envoyer</button>
      </div>
 </form>
