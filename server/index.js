@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
 
 
 app.post('/', async (req, res) => {
-  const { name, request } = req.body;
+  const { activite, chiffre, location,
+    salarie, remuneration, materiel, vehicule } = req.body;
   const auth = new google.auth.GoogleAuth({
     keyFile: 'credentials.json',
     scopes: 'https://www.googleapis.com/auth/spreadsheets',
@@ -46,23 +47,45 @@ app.post('/', async (req, res) => {
  });
 
 
-
-  // Append the values to the next empty row
-  await googleSheets.spreadsheets.values.append({
-    auth,
-    spreadsheetId: spreadsheetID,
-    range: 'SAISIE CLIENT!E5',
-    valueInputOption: 'USER_ENTERED',
-    resource: {
-      values: [
-        [name, request],
+// Append the values to the next empty row
+await googleSheets.spreadsheets.values.append({
+  auth,
+  spreadsheetId: spreadsheetID,
+  range: 'SAISIE CLIENT!E5:E26',
+  valueInputOption: 'USER_ENTERED',
+  resource: {
+    values: [
       
+      [activite],
+      [""],
+      [""],
+      [chiffre],
+      [""],
+      [""],
+      [location],
+      [""],
+      [""],
+      [salarie],
+      [""],
+      [""],
+      [""],
+      [""],
+      [""],
+      [""],
+      [""],
+      [remuneration],
+      [""],
+      [materiel],
+      [""],
+      [""],
+      [vehicule],
+    
 
-      ]
-    },
-  });
+    ]
+  },
+});
 
-  res.send("Success");
+res.send("Success");
 
 });
 

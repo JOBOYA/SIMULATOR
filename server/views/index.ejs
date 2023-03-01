@@ -4,18 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----------Cdn tailwind-->
+    
    
     <title>Document</title>
 </head>
 <body>
 <form action="" method="POST">
-    <div class="mb-4">
-        <label for="request"class="block text-gray-700 text-sm font-bold mb-2" for="email">
-            Email
-        </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="request" id="request" type="text" placeholder="Email">
-    </div>
+  <div class="container">
+       <p>Votre Activité</p>
+        <select name="activite" id="activite">
+            <option value="artisan" id="activite">ARTISANT</option>
+            <option value="commercant" id="activite">COMMERCANT</option>
+            <option value="professionliberal" id="activite">CONSULTANT</option>
+            <option value="autre" id="activite">LIBERAL</option>
+       </select>
+        <p>Votre Chiffre d'Affaire</p>
+     
+        <input name="chiffre" id="chiffre" type="text" placeholder="Votre montant"/>
+        
+
+       <p>Avez une location professionnelle? Si oui, pour quel montant annuel</p>
+       <select name="location" id="location">
+           <option value="oui" id="location">Oui</option>
+           <option value="non" id="location">Non</option>
+        </select>
+
+        <p>Présence de salarié oui ou non</p>
+        <select name="salarie" id="salarie">
+            <option value="oui" id="salarie">Oui</option>
+            <option value="non" id="salarie">Non</option>
+        </select>
+   
+    <p>Votre rémunératon net mensuel (ou retrait personnel mensuel)</p>
+    <input name="remuneration" id="remuneration" type="text" placeholder="Votre rémunération">
+    <p>Investissement : matériels</p>
+    <select name="materiel" id="materiel">
+        <option value="oui" id="materiel">Oui</option>
+        <option value="non" id="materiel">Non</option>
+    </select>
+
+    <p>Investissement: véhicule</p>
+    <select name="vehicule" id="vehicule">
+        <option value="oui" id="vehicule">Oui</option>
+        <option value="non" id="vehicule">Non</option>
+  </select>
       <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Envoyer</button>
+     </div>
 </form>
     
 </body>
