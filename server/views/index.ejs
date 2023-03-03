@@ -4,51 +4,150 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!----------Cdn tailwind-->
-    
-   
-    <title>Document</title>
+
+    <!-- Lien vers le CDN Tailwind -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Mon formulaire avec Tailwind</title>
 </head>
 <body>
-<form action="" method="POST">
-  <div class="container">
-       <p>Votre Activité</p>
-        <select name="activite" id="activite">
-            <option value="ARISANT" id="activite">ARTISANT</option>
-            <option value="COMMERCANT" id="activite">COMMERCANT</option>
-            <option value="CONSULTANT" id="activite">CONSULTANT</option>
-            <option value="LIBERAL" id="activite">LIBERAL</option>
-       </select>
-        <p>Votre Chiffre d'Affaire</p>
-     
-        <input name="chiffre" id="chiffre" type="text" placeholder="Votre montant"/>
-        
+    <div class="container mx-auto py-8">
+        <form action="" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="activite">
+                    Votre Activité
+                </label>
+                <div class="relative">
+                    <select class="block appearance-none w-full border-gray-400 border-2 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="activite" name="activite">
+                        <option value="ARTISANT">ARTISANT</option>
+                        <option value="COMMERCANT">COMMERCANT</option>
+                        <option value="CONSULTANT">CONSULTANT</option>
+                        <option value="LIBERAL">LIBERAL</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M14.95 7.95a1 1 0 0 0-1.41 0L10 11.59l-3.54-3.54a1 1 0 0 0-1.41 1.41l4.24 4.24a1 1 0 0 0 1.41 0l4.24-4.24a1 1 0 0 0 0-1.41z"/></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="chiffre">
+                    Votre Chiffre d'Affaire
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="chiffre" name="chiffre" type="number" placeholder="Votre montant">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="location">
+                    Avez une location professionnelle? Si oui, pour quel montant annuel
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="location" name="location" type="number" placeholder="Votre montant">
+            </div>
 
-       <p>Avez une location professionnelle? Si oui, pour quel montant annuel</p>
-       <input name="location" id="location" placeholder="Votre montant">
-
-        <p>Présence de salarié oui ou non, si oui veuillez indiquer le salaire brut</p>
-        <select name="salarie">
-            <option value="OUI" id="oui" >OUI</option>
-           <option value="NON" >NON</option>
-        </select>
-        <input name="salarie" id="salarie" placeholder="Votre salaire">
-
-
-        <p>salaire brut mensuel</p>
-        <input name="salaire" id="salaire" placeholder="Votre salaire">
-   
-    <p>Votre rémunératon net mensuel (ou retrait personnel mensuel)</p>
-    <input name="remuneration" id="remuneration" placeholder="Votre rémunération">
-
-    <p>Investissement : matériels</p>
-    <input name="materiel" id="materiel" placeholder="Votre investissement">
-
-    <p>Investissement: véhicule</p>
-    <input name="vehicule" id="vehicule" placeholder="Votre investissement">
-
-      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Envoyer</button>
-     </div>
+            <div class="mb-4">
+                <p class="block text-gray-700 font-bold mb-2">
+                    Présence de salarié oui ou non, si oui veuillez indiquer le salaire brut
+                </p>
+                <div class="flex items-center mb-4">
+                    <input type="radio" id="salarie" name="salarie" value="OUI" class="form-radio h-4 w-4 text-indigo-600">
+                    <label for="salarie_oui" class="ml-3">
+                        Oui
+                    </label>
+                </div>
+                <div class="flex items-center mb-4">
+                    <input type="radio" id="salarie" name="salarie" value="NON" class="form-radio h-4 w-4 text-indigo-600">
+                    <label for="salarie_non" class="ml-3">
+                        Non
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="nombreSalarie">
+                        Veuillez indiquer le nombre de salarié
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nombreSalarie" name="nombreSalarie" type="number" placeholder="Votre salaire">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="montantBrut">
+                        Veuillez indiquer le salaire brut mensuel
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="montantBrut" name="montantBrut" type="number" placeholder="Votre salaire">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="salaire">
+                        Salaire brut mensuel
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="salaire" name="salaire" type="number" placeholder="Votre salaire">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="remuneration">
+                        Votre rémunératon net mensuel (ou retrait personnel mensuel)
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="remuneration" name="remuneration" type="number" placeholder="Votre rémunération">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="materiel">
+                        Investissement : matériels
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="materiel" name="materiel" type="number" placeholder="Votre investissement">
+                </div>
+               
+            
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="vehicule">
+                        Investissement: véhicule
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="vehicule" name="vehicule" type="number" placeholder="Votre investissement">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="capital">
+                        CAPITAL SOCIAL ENVISAGE
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="capital" name="capital" type="number" placeholder="Votre capital">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="apport">
+                        APPORT D'ARGENT PERSONNEL
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="apport" name="apport" type="number" placeholder="Votre apport">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="emprunt">
+                        EMPRUNT
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="emprunt" name="emprunt" type="number" placeholder="Votre emprunt">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="utilisation">
+                        Utilisation du véhicule personnel (km)
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="utilisation" name="utilisation" type="number" placeholder="Votre utilisation">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="part">
+                        Indiquez le nombre de part de votre foyer fiscal
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="part" name="part" type="number" placeholder="Votre part">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="revenu">
+                        Vos autres revenus salariés annuels
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="revenu" name="revenu" type="number" placeholder="Votre revenu">
+                </div>
+               
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="revenuFoyer">
+                        Indiquez les autres revenus salariés de votre foyer
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="revenuFoyer" name="revenuFoyer" type="number" placeholder="Votre revenu">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="revenuAutre">
+                        Indiquez les autres revenus annuels
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="revenuAutre" name="revenuAutre" type="number" placeholder="Votre revenu">
+                </div>
+                
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Envoyer</button>
+                
 </form>
     
 </body>
